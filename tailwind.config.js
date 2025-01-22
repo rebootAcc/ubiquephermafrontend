@@ -13,12 +13,20 @@ export default {
       },
       boxShadow: {
         "custom-light": "5px 0px 8px 0px rgba(0, 0, 0, 0.05)",
+        custom: "rgba(0, 0, 0, 0.35) 0px 2px 7px",
       },
       fontFamily: {
         outfit: ["Outfit", "serif"],
       },
+   
       colors: {
-        "site-main-blue": "#348DCB",
+        "custom-blue": "#348DCB",
+        "custom-green": "#00A86A",
+        "custom-black": "#333333",
+        "custom-gray": "#888888",
+        "custom-orange": "#F5841E",
+        "custom-lite-gray": "#666666",
+         "site-main-blue": "#348DCB",
         "site-main-orange": "#F5841E",
         "site-main-black": "#333333",
         "site-main-grey": "#888888",
