@@ -1,12 +1,19 @@
 import React from "react";
 import useElementHeight from "../../hooks/useElementHeight";
 
-const EnquiryBoxComponent = () => {
+const EnquiryBoxComponent = ({ showCover = true }) => {
   const [imageHeight, formRef] = useElementHeight();
 
   return (
-    <div className="relative flex gap-4 xl:p-10 lg:p-8 sm:p-4 w-full opacity-100 rounded-lg justify-center items-center">
-      <div className="flex-1">
+    <div
+      className={`relative flex gap-4 flex-1 ${
+        showCover ? "xl:p-10 lg:p-8 sm:p-4" : ""
+      }  w-full opacity-100 rounded-lg justify-center items-center`}
+    >
+      <div
+        className="flex-1"
+        style={showCover ? { display: "block" } : { display: "none" }}
+      >
         <img
           src="/extra/enquiry-cover.jpg"
           alt="enquiry-cover"
@@ -16,10 +23,12 @@ const EnquiryBoxComponent = () => {
         />
       </div>
       <div
-        className="bg-[url('/custom-bg/enquiry-form.png')] w-full bg-blend-multiply flex-1 relative"
+        className="bg-[url('/custom-bg/enquiry-form.png')] w-full bg-blend-multiply flex-1 relative flex"
         ref={formRef}
       >
-        <form className="flex flex-col sm:gap-8 lg:gap-4 xlg:gap-8 xl:gap-12 sm:px-4 lg:px-8 xlg:px-12 sm:py-4 lg:py-8 xlg:py-12 w-full relative bg-[rgba(52,_141,_203,_0.70)]">
+        <form
+          className={`flex flex-col sm:gap-8 lg:gap-4 xlg:gap-8 xl:gap-12 sm:px-4 lg:px-8 xlg:px-12 sm:py-4 lg:py-8 xlg:py-12 w-full relative bg-[rgba(52,_141,_203,_0.70)]`}
+        >
           <div className="flex flex-col gap-2">
             <input
               type="text"

@@ -2,7 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { AiFillInstagram } from "react-icons/ai";
 import { BiSolidPhoneCall } from "react-icons/bi";
-import { FaArrowAltCircleRight, FaFacebook, FaGoogle, FaYoutube } from "react-icons/fa";
+import {
+  FaArrowAltCircleRight,
+  FaFacebook,
+  FaGoogle,
+  FaYoutube,
+} from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { MdEmail, MdOutlineKeyboardArrowRight } from "react-icons/md";
@@ -25,7 +30,7 @@ const FooterComponent = () => {
     },
     { name: "/images/youtube.svg", link: "" },
   ];
-  
+
   //   const getCategories = async () => {
   //     try {
   //       const response = await axios.get(
@@ -60,11 +65,11 @@ const FooterComponent = () => {
   const quicklink = [
     { name: "Home", link: "/" },
     { name: "About Us", link: "/aboutus" },
-    { name: "Our Products", link: "/ourproducts" },
-    { name: "Our Vision", link: "/ourvission" },
-    { name: "Our Gallery", link: "" },
-
-    { name: "Contact Us", link: "/contactus" },
+    { name: "Our Products", link: "/our-products" },
+    { name: "Career", link: "/career" },
+    { name: "Investor", link: "/investor" },
+    { name: "Marketing", link: "/marketing" },
+    { name: "Contact Us", link: "/contact-us" },
   ];
   return (
     <div className="xl:p-16 lg:p-8 sm:p-4 bg-site-main-blue flex flex-col gap-4">
@@ -112,7 +117,7 @@ const FooterComponent = () => {
                 key={index}
               >
                 <span>
-                <FaArrowAltCircleRight />
+                  <FaArrowAltCircleRight />
                 </span>
                 <span>{service.name}</span>
               </Link>
@@ -133,7 +138,7 @@ const FooterComponent = () => {
                 key={index}
               >
                 <span>
-                <FaArrowAltCircleRight />
+                  <FaArrowAltCircleRight />
                 </span>
                 <span>{category.categoryName}</span>
               </button>

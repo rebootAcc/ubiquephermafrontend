@@ -11,11 +11,11 @@ const Header = () => {
   const NavElement = [
     { name: "Home", link: "/" },
     { name: "About Us", link: "/aboutus" },
-    { name: "Our Products", link: "/ourproducts" },
+    { name: "Our Products", link: "/our-products" },
     { name: "Career", link: "/career" },
     { name: "Investor", link: "/investor" },
     { name: "Marketing", link: "/marketing" },
-    { name: "Contact Us", link: "/contactus" },
+    { name: "Contact Us", link: "/contact-us" },
   ];
 
   const [scrolled, setScrolled] = useState(false);
@@ -39,22 +39,6 @@ const Header = () => {
     }
   }, [location.pathname, hashLink]);
 
-  const handleNavClick = (link) => {
-    if (link.includes("#")) {
-      if (location.pathname !== "/") {
-        setHashLink(link);
-        navigate("/");
-      } else {
-        const section = document.querySelector(link);
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    } else {
-      navigate(link);
-    }
-  };
-
   return (
     <header
       className={`bg-[white] fixed z-[1000] w-full font-lexend ${
@@ -71,21 +55,17 @@ const Header = () => {
         </Link>
         <div className="flex justify-end items-center lg:text-sm xlg:text-base xl:text-lg relative">
           {NavElement.map((navbar, index) => (
-            <div
+            <Link
               key={index}
               className={`font-medium lg:px-2 xlg:px-4 xl:px-5 lg:h-[5rem] xlg:h-[6rem] flex justify-center items-center hover:text-site-main-blue ${
                 location.pathname === navbar.link
                   ? "text-site-main-blue"
                   : "text-site-main-black"
               }`}
+              to={navbar.link}
             >
-              <span
-                className=" cursor-pointer"
-                onClick={() => handleNavClick(navbar.link)}
-              >
-                {navbar.name}
-              </span>
-            </div>
+              <span className=" cursor-pointer">{navbar.name}</span>
+            </Link>
           ))}
         </div>
         <Link
@@ -118,17 +98,13 @@ const Header = () => {
       {menuopen && (
         <div className="sm:flex bg-site-main-blue flex-col sm:h-[40vh] md:h-[60vh] md:text-3xl sm:text-xl overflow-scroll lg:hidden px-9 relative">
           {NavElement.map((navbar, index) => (
-            <div
+            <Link
+              to={navbar.link}
               key={index}
               className="font-medium text-[white] p-4 md:py-10 border-b-2 border-gray-200"
             >
-              <span
-                className=" cursor-pointer"
-                onClick={() => handleNavClick(navbar.link)}
-              >
-                {navbar.name}
-              </span>
-            </div>
+              <span className=" cursor-pointer">{navbar.name}</span>
+            </Link>
           ))}
           <Link
             to={"https://api.whatsapp.com/send?phone=919434072559"}

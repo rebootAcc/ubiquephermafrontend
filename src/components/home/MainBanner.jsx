@@ -53,7 +53,7 @@ const MainBanner = () => {
             <img
               src={`${slider.sliderImage}`}
               alt="slider"
-              className="h-[580px] w-full object-cover"
+              className="h-[580px] w-full object-cover aspect-square"
             />
           </div>
         ))}
