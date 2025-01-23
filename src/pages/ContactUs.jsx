@@ -3,13 +3,13 @@ import MainPageTemplate from "../templates/MainPageTemplate";
 import { FaLocationDot } from "react-icons/fa6";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { MdEmail } from "react-icons/md";
-import { IoLogoWhatsapp } from "react-icons/io";
 import EnquiryBoxComponent from "../components/contact/EnquiryBoxComponent";
+import SubBanner from "../components/global/SubBanner";
 
 const ContactUS = () => {
   return (
     <MainPageTemplate>
-      {/* <SubBanner heading={"Contact US"} bannerimg={"/images/subbanner.png"} /> */}
+      <SubBanner heading={"Contact Us"} />
       <div className="xl:p-16 lg:p-8 sm:p-4 sm:grid sm:grid-cols-1 place-items-stretch md:flex md:flex-row items-stretch gap-6">
         <div className="flex flex-col sm:gap-3 flex-1 lg:gap-3 xlg:gap-5">
           <div className="flex flex-col border sm:gap-3 lg:gap-3 xlg:gap-5 sm:px-4 lg:px-8 xlg:px-12 sm:py-4 lg:py-8 xlg:py-12 rounded-md border-custom-blue">
