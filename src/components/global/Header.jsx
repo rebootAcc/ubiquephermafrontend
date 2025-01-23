@@ -10,7 +10,7 @@ const Header = () => {
 
   const NavElement = [
     { name: "Home", link: "/" },
-    { name: "About Us", link: "/aboutus" },
+    { name: "About Us", link: "/about-us" },
     { name: "Our Products", link: "/our-products" },
     { name: "Career", link: "/career" },
     { name: "Investor", link: "/investor" },

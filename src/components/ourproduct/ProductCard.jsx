@@ -31,14 +31,23 @@ const ProductCard = ({ content }) => {
         <div className="text-custom-lite-gray ">
           Pack Size <span className="text-custom-black">{packagingsize}</span>
         </div>
-
-        <div className="flex flex-wrap break-words">
-          {details.map((item, index) => (
-            <div key={index} className="text-sm text-custom-black font-medium">
-              {item.molecule} {item.strength},
-            </div>
-          ))}
+        <div className="line-clamp-3">
+          <p className="text-sm text-custom-black font-medium">
+            {details.map((item, index) => (
+              <span key={index} className="mr-2  inline-block">
+                {item.molecule} {item.strength},
+              </span>
+            ))}
+          </p>
         </div>
+      </div>
+      <div className="grid grid-cols-2 gap-4 font-medium">
+        <button className="h-[2rem] flex justify-center items-center rounded-sm text-sm text-custom-green bg-[#F7F7F7]">
+          Order Now
+        </button>
+        <button className="h-[2rem] flex justify-center items-center rounded-sm text-sm text-custom-orange bg-[#F7F7F7]">
+          Enquiry Now
+        </button>
       </div>
     </div>
   );
