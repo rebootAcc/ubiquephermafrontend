@@ -72,7 +72,7 @@ const FooterComponent = () => {
     { name: "Contact Us", link: "/contact-us" },
   ];
   return (
-    <div className="xl:p-16 lg:p-8 sm:p-4 bg-site-main-blue flex flex-col gap-4">
+    <div className="xl:p-16 lg:p-8 sm:p-4 bg-custom-blue flex flex-col gap-4">
       <div className="flex sm:flex-col lg:flex-row sm:gap-8 lg:gap-5 xl:gap-8">
         <div className="lg:w-[35%] sm:w-full flex flex-col gap-6">
           <div className="">

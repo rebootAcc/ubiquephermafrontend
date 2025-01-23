@@ -57,10 +57,10 @@ const Header = () => {
           {NavElement.map((navbar, index) => (
             <Link
               key={index}
-              className={`font-medium lg:px-2 xlg:px-4 xl:px-5 lg:h-[5rem] xlg:h-[6rem] flex justify-center items-center hover:text-site-main-blue ${
+              className={`font-medium lg:px-2 xlg:px-4 xl:px-5 lg:h-[5rem] xlg:h-[6rem] flex justify-center items-center hover:text-custom-blue ${
                 location.pathname === navbar.link
-                  ? "text-site-main-blue"
-                  : "text-site-main-black"
+                  ? "text-custom-blue"
+                  : "text-custom-black"
               }`}
               to={navbar.link}
             >
@@ -70,7 +70,7 @@ const Header = () => {
         </div>
         <Link
           to={"https://api.whatsapp.com/send?phone=919434072559"}
-          className="px-6 h-[2.4rem] flex justify-center items-center bg-site-main-orange text-white text-base font-medium hover:bg-[white] hover:text-site-main-orange border border-site-main-orange rounded-md"
+          className="px-6 h-[2.4rem] flex justify-center items-center bg-custom-orange text-white text-base font-medium hover:bg-[white] hover:text-custom-orange border border-custom-orange rounded-md"
         >
           Trade Enquiry
         </Link>
@@ -96,7 +96,7 @@ const Header = () => {
         </button>
       </div>
       {menuopen && (
-        <div className="sm:flex bg-site-main-blue flex-col sm:h-[40vh] md:h-[60vh] md:text-3xl sm:text-xl overflow-scroll lg:hidden px-9 relative">
+        <div className="sm:flex bg-custom-blue flex-col sm:h-[40vh] md:h-[60vh] md:text-3xl sm:text-xl overflow-scroll lg:hidden px-9 relative">
           {NavElement.map((navbar, index) => (
             <Link
               to={navbar.link}
@@ -108,7 +108,7 @@ const Header = () => {
           ))}
           <Link
             to={"https://api.whatsapp.com/send?phone=919434072559"}
-            className="p-4 w-full my-8 flex justify-center items-center  text-lg font-medium bg-[white] text-site-main-orange border border-site-main-orange rounded-md"
+            className="p-4 w-full my-8 flex justify-center items-center  text-lg font-medium bg-[white] text-custom-orange border border-custom-orange rounded-md"
           >
             Trade Enquiry
           </Link>

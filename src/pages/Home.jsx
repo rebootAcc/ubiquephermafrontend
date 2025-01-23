@@ -11,12 +11,11 @@ const Home = () => {
   return (
     <MainPageTemplate>
       <MainBanner />
-      <EnquiryBoxComponent />
-      <div>popular</div>
-       <ProductCategory />
+      <ProductCategory />
       <AboutUsSection />
       <SearchSection />
       <OurProductHomeSection />
+      <EnquiryBoxComponent />
     </MainPageTemplate>
   );
 };

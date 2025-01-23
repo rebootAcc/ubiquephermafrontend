@@ -10,8 +10,8 @@ import { Link } from "react-router-dom";
 const TopHeader = () => {
   return (
     <div className=" z-[60] w-full">
-      <div className=" flex md:flex-row sm:flex-col justify-between sm:gap-2 md:gap-0 items-center bg-site-main-blue  text-white">
-        <div className="flex gap-4 w-full bg-site-main-blue sm:rounded-br-0 md:rounded-br-[4rem] sm:h-[2rem] md:h-[2.5rem] sm:px-4 md:px-6 sm:text-xs lg:text-sm xlg:text-base">
+      <div className=" flex md:flex-row sm:flex-col justify-between sm:gap-2 md:gap-0 items-center bg-custom-blue  text-white">
+        <div className="flex gap-4 w-full bg-custom-blue sm:rounded-br-0 md:rounded-br-[4rem] sm:h-[2rem] md:h-[2.5rem] sm:px-4 md:px-6 sm:text-xs lg:text-sm xlg:text-base">
           <Link
             to="tel:+919057886170"
             className="flex md:gap-2 sm:gap-1 items-center sm:text-[10px] lg:text-sm xlg:text-base font-medium"
