@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useElementHeight from "./useElementHeight";
+import useElementHeight from "../../hooks/useElementHeight";
 
 const AboutUsSection = () => {
   const [rightSideHeight, leftSideRef] = useElementHeight();
