@@ -1,8 +1,11 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 const ProductCategory = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
   const [autoplay, setAutoplay] = useState(false);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 550) {
@@ -34,8 +37,35 @@ const ProductCategory = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const getProducts = async () => {
+    try {
+      setLoading(true);
+
+      const response = await axios.get(
+        `${import.meta.env.VITE_BASE_URL}/api/products/get`,
+        {
+          params: {
+            active: true,
+
+            page: 1,
+            limit: 6,
+          },
+        }
+      );
+
+      setProducts(response.data.data);
+    } catch (error) {
+      console.error("Error fetching products", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    getProducts();
+  }, []);
   const settings = {
-    infinite: true,
+    infinite: products.length > slidesToShow,
     speed: 2000,
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
@@ -46,11 +76,6 @@ const ProductCategory = () => {
     centerMode: false,
     arrows: false,
   };
-  const products = [
-    { imgsrc: "/images/category.png", name: "Food Products" },
-    { imgsrc: "/images/category.png", name: "Drug Products" },
-    { imgsrc: "/images/category.png", name: "Others Products" },
-  ];
   return (
     <div className="xl:p-16 lg:p-8 p-4 flex flex-col gap-6">
       <h1 className=" flex justify-center items-center xl:text-4xl font-semibold lg:text-3xl text-2xl text-custom-black">
@@ -65,12 +90,12 @@ const ProductCategory = () => {
                 key={index}
               >
                 <img
-                  src={item.imgsrc}
+                  src={item.productImage.secure_url}
                   alt=""
                   className=" xlg:w-[16rem] xlg:h-[16rem] md:h-[12rem] md:w-[12rem] h-[10rem] w-[10rem] rounded-full object-cover"
                 />
                 <h1 className="xlg:text-3xl lg:text-2xl text-xl font-semibold text-custom-gray">
-                  {item.name}
+                  {item.brandName}
                 </h1>
               </div>
             ))}

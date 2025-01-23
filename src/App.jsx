@@ -8,6 +8,7 @@ import Carrer from "./pages/Carrer";
 import Investor from "./pages/Investor";
 import AdminLogin from "./pages/AdminLogin";
 import AddAndManageSlider from "./pages/admin/AdminSlider";
+import AddAndManageProducts from "./pages/admin/AddAndManageProducts";
 
 function App() {
   return (
@@ -19,8 +20,10 @@ function App() {
         <Route path="/career" element={<Carrer />} />
         <Route path="/investor" element={<Investor />} />
         <Route path="/contact-us" element={<ContactUS />} />
+        {/* admin */}
         <Route path="/reboots" element={<AdminLogin />} />
         <Route path="/admin/sliders" element={<AddAndManageSlider />} />
+        <Route path="/admin/products" element={<AddAndManageProducts />} />
       </Routes>
     </>
   );

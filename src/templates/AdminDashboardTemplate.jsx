@@ -32,13 +32,15 @@ const AdminDashboardTemplate = ({ children }) => {
 
   return (
     <div className="flex flex-col w-full h-full bg-[#EDF4F7] overflow-hidden">
-      <div className="flex flex-row h-screen sm:w-full relative">
-        <AdminSideHeader
-          isMobileSidebarOpen={isMobileSidebarOpen}
-          closeMobileSidebar={closeMobileSidebar}
-        />
-        <div className="w-full p-4 overflow-auto bg-[#EDF4F7] no-scrollbar">
-          {children}
+      <div className="flex flex-row h-screen  w-full relative">
+        <div className="w-[20%] xlg:w-[18%]">
+          <AdminSideHeader
+            isMobileSidebarOpen={isMobileSidebarOpen}
+            closeMobileSidebar={closeMobileSidebar}
+          />
+        </div>
+        <div className="w-[80%] xlg:w-[82%] p-4 overflow-auto bg-[#EDF4F7] no-scrollbar">
+          <div className="w-full">{children}</div>
         </div>
       </div>
     </div>

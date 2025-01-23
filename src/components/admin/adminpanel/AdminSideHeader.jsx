@@ -23,7 +23,7 @@ const AdminSideHeader = ({ isMobileSidebarOpen, closeMobileSidebar }) => {
       links: [
         {
           name: "Add & Manage Product",
-          link: "/admin/add&manageproduct",
+          link: "/admin/products",
         },
         {
           name: "Add & Manage Category",
@@ -65,15 +65,10 @@ const AdminSideHeader = ({ isMobileSidebarOpen, closeMobileSidebar }) => {
 
   return (
     <div
-      id="admin-sidebar"
-      className={`flex flex-col gap-4 h-full bg-[white] shadow-custom-light transition-all duration-300 z-50 ${
-        isMobileSidebarOpen ? "block" : "hidden"
-      } md:flex ${
-        isSidebarHovered || activeIndex !== null ? "w-64" : "w-[5rem]"
-      }`}
+      className={`flex flex-col gap-4 h-full bg-[white] shadow-custom-light  w-full  `}
     >
       <div className="flex justify-center items-center mt-4 border-b p-2 pb-5 border-[#00000033]">
-        <img src="/logo.png" alt="Long Logo" className="h-[1.5rem] " />
+        <img src="/logo.png" alt="Long Logo" className="h-[2.5rem] " />
       </div>
       <div className="flex flex-col gap-4 mt-6">
         {sideheader.map((item, index) => (

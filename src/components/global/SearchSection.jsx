@@ -1,11 +1,107 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-const SearchSection = () => {
+const SearchSection = ({ initialQuery, setSearchQueryProp }) => {
+  const [suggestions, setSuggestions] = useState([]);
+  const [searchQuery, setSearchQuery] = useState(initialQuery || "");
+  const [randomSuggestions, setRandomSuggestions] = useState([]);
+  const [isRandom, setIsRandom] = useState(true);
+  const suggestionBoxRef = useRef(null);
+  const inputRef = useRef(null);
+  useEffect(() => {
+    setSearchQuery(initialQuery || "");
+  }, [initialQuery]);
+
+  const fetchRandomSuggestions = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_BASE_URL}/api/products/random-suggestions`,
+        {
+          params: { limit: 30 },
+        }
+      );
+      setRandomSuggestions(response.data);
+      setSuggestions(response.data);
+    } catch (error) {
+      console.error("Error fetching random suggestions", error);
+    }
+  };
+
+  const fetchSuggestions = async (query) => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_BASE_URL}/api/products/search`,
+        {
+          params: { query },
+        }
+      );
+      setSuggestions(response.data);
+    } catch (error) {
+      console.error("Error fetching suggestions", error);
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    setIsRandom(query.length === 0);
+
+    if (query.length > 0) {
+      fetchSuggestions(query);
+    } else {
+      setSuggestions(randomSuggestions);
+      setSearchQueryProp("");
+      window.location.href = "/our-products";
+    }
+  };
+
+  const handleInputFocus = () => {
+    if (searchQuery.length === 0) {
+      fetchRandomSuggestions();
+    }
+  };
+  const handleClickOutside = (event) => {
+    if (
+      suggestionBoxRef.current &&
+      !suggestionBoxRef.current.contains(event.target) &&
+      inputRef.current &&
+      !inputRef.current.contains(event.target)
+    ) {
+      setSuggestions([]);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const matchQuery = (suggestion) => {
+    const lowerCaseQuery = searchQuery.toLowerCase();
+    if (suggestion.moleculeName.toLowerCase().includes(lowerCaseQuery)) {
+      return suggestion.moleculeName;
+    } else if (suggestion.brandName.toLowerCase().includes(lowerCaseQuery)) {
+      return suggestion.brandName;
+    }
+    return null;
+  };
+
+  const handleSearchSubmit = () => {
+    if (searchQuery.length > 0) {
+      setSearchQueryProp(searchQuery);
+    } else {
+      setSearchQueryProp("");
+      window.location.href = "/our-products";
+    }
+  };
   return (
     <div className="sm:p-4 xl:p-16 lg:p-8 relative">
-      <div className="bg-[url('/images/searchbg.png')] rounded-md w-full h-full bg-cover bg-center flex items-center justify-center">
-        <div className="flex flex-col  w-full  rounded-md bg-custom-blue bg-opacity-70  sm:p-4 lg:p-8 shadow-lg">
+      <div className="bg-[url('/images/searchbg.png')] rounded-lg w-full h-full bg-cover bg-center flex items-center justify-center">
+        <div className="flex flex-col  w-full  rounded-lg bg-custom-blue bg-opacity-70 sm:p-4 lg:p-8 shadow-lg">
           <h1 className="md:text-lg sm:text-sm text-white font-bold ml-4 mb-6">
             Search using Product or molecule name
           </h1>
@@ -14,14 +110,55 @@ const SearchSection = () => {
               <div className="md:w-[80%] sm:w-[80%]">
                 <input
                   type="text"
-                  className="w-full sm:h-[3.5rem] md:h-[4rem] p-4 bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#0047ad]"
+                  value={searchQuery}
+                  onChange={handleInputChange}
+                  onFocus={handleInputFocus}
+                  ref={inputRef}
+                  className="w-full sm:h-[3.5rem] md:h-[4rem] p-4 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0047ad]"
                   placeholder="Write a Medicine or Molecule name"
                 />
+
+                {suggestions.length > 0 && (
+                  <ul
+                    ref={suggestionBoxRef}
+                    className="absolute z-10 w-full h-[20rem] overflow-y-scroll !overflow-x-hidden customScrollbar  bg-white border border-gray-300 rounded-lg shadow-md mt-2"
+                  >
+                    {suggestions.map((suggestion, index) => {
+                      const matchedText = isRandom
+                        ? suggestion.moleculeName || suggestion.brandName // Show random suggestions
+                        : matchQuery(suggestion);
+                      return (
+                        matchedText && (
+                          <li key={index}>
+                            <Link
+                              to={`/our-products?search=${matchedText}`}
+                              className="block p-2 cursor-pointer hover:bg-gray-100"
+                              onClick={() => {
+                                setSearchQuery(matchedText);
+                                setSuggestions([]);
+                              }}
+                            >
+                              {matchedText}
+                            </Link>
+                          </li>
+                        )
+                      );
+                    })}
+                  </ul>
+                )}
               </div>
-              <Link className="h-[3.5rem] sm:flex md:hidden sm:w-[20%] bg-custom-orange text-[white] text-sm font-semibold rounded-md hover:bg-indigo-700 transition duration-300 flex justify-center items-center">
+              <Link
+                to={`/our-products?search=${searchQuery}`}
+                onClick={handleSearchSubmit}
+                className="h-[3.5rem] sm:flex md:hidden sm:w-[20%] bg-custom-orange text-[white] text-sm font-semibold rounded-lg hover:bg-indigo-700 transition duration-300 flex justify-center items-center"
+              >
                 Find
               </Link>
-              <Link className="h-[4rem] sm:hidden md:flex md:w-[20%] bg-custom-orange text-[white] text-lg font-semibold rounded-md hover:bg-indigo-700 transition duration-300 flex justify-center items-center">
+              <Link
+                to={`/our-products?search=${searchQuery}`}
+                onClick={handleSearchSubmit}
+                className="h-[4rem] sm:hidden md:flex md:w-[20%] bg-custom-orange text-[white] text-lg font-semibold rounded-lg hover:bg-indigo-700 transition duration-300 flex justify-center items-center"
+              >
                 Find Medicine
               </Link>
             </div>

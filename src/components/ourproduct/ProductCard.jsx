@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductCard = ({ content }) => {
+const ProductCard = ({ content, onOrderNowClick }) => {
   const {
     imgsrc,
     medicinename,
@@ -11,9 +11,13 @@ const ProductCard = ({ content }) => {
     details,
   } = content;
   return (
-    <div className="p-2 shadow-custom flex flex-col gap-2 rounded-md border border-[#0000001A]">
+    <div className="p-2 shadow-custom flex flex-col gap-2 h-full rounded-md border border-[#0000001A]">
       <div>
-        <img src={imgsrc} alt="" className="w-full rounded-sm" />
+        <img
+          src={imgsrc}
+          alt=""
+          className="w-full rounded-sm h-[15rem] object-cover"
+        />
       </div>
       <div className="flex flex-col gap-1">
         <h1 className="text-xl font-medium">{medicinename}</h1>
@@ -41,8 +45,11 @@ const ProductCard = ({ content }) => {
           </p>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-4 font-medium">
-        <button className="h-[2rem] flex justify-center items-center rounded-sm text-sm text-custom-green bg-[#F7F7F7]">
+      <div className="grid grid-cols-2 gap-4 font-medium ">
+        <button
+          onClick={() => onOrderNowClick(content)}
+          className="h-[2rem] flex justify-center items-center rounded-sm text-sm text-custom-green bg-[#F7F7F7]"
+        >
           Order Now
         </button>
         <button className="h-[2rem] flex justify-center items-center rounded-sm text-sm text-custom-orange bg-[#F7F7F7]">
