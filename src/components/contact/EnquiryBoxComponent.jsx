@@ -64,7 +64,7 @@ const EnquiryBoxComponent = ({ showCover = true }) => {
             />
           </div>
           <button
-            className="h-[4rem] lg:mt-5 bg-site-main-orange flex justify-center items-center text-xl font-semibold rounded-md capitalize text-white w-1/3 self-center"
+            className="h-[4rem] lg:mt-5 bg-custom-orange flex justify-center items-center text-xl font-semibold rounded-md capitalize text-white w-1/3 self-center"
             type="submit"
           >
             send
