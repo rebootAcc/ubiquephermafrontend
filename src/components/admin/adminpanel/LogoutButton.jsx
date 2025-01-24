@@ -1,15 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IoIosLogOut } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 const LogoutButton = () => {
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const profileImageRef = useRef(null);
   const profileDropdownRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("name");
-    window.location.href = "/";
+    navigate("/");
   };
 
   const [userName, setUserName] = useState("");

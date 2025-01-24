@@ -49,7 +49,7 @@ const ContactUS = () => {
             <div className="flex-1">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14256.380009881912!2d88.4251498!3d26.7094118!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e441693048af99%3A0x1e6947765d6e2a15!2sJai%20Matadi%20Enterprise!5e0!3m2!1sen!2sin!4v1727548193942!5m2!1sen!2sin"
-                className="rounded-lg w-full sm:h-[12rem] lg:h-[15rem] xl:h-[20rem]"
+                className="rounded-lg w-full sm:h-[12rem] lg:h-[15rem] xl:h-[20rem] flex-1"
                 loading="lazy"
               ></iframe>
             </div>

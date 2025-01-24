@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 const preloadImages = (imageUrls) => {
@@ -7,11 +8,7 @@ const preloadImages = (imageUrls) => {
   });
 };
 const MainBanner = () => {
-  const [sliders, setSliders] = useState([
-    { sliderImage: "/slider/slider-1.jpg" },
-    { sliderImage: "/slider/slider-1.jpg" },
-    { sliderImage: "/slider/slider-1.jpg" },
-  ]);
+  const [sliders, setSliders] = useState([]);
 
   const settings = {
     infinite: true,
@@ -25,25 +22,25 @@ const MainBanner = () => {
     arrows: false,
   };
 
-  // useEffect(() => {
-  //   const imageUrls = sliders.map((sliders) => sliders.imgsrc);
-  //   preloadImages(imageUrls);
-  // }, [sliders]);
+  useEffect(() => {
+    const imageUrls = sliders.map((sliders) => sliders.imgsrc);
+    preloadImages(imageUrls);
+  }, [sliders]);
 
-  //   const fetchSliders = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         `${import.meta.env.VITE_BASE_URL}/api/sliders/get?active=true`
-  //       );
-  //       setSliders(response.data);
-  //     } catch (error) {
-  //       console.error("Error fetching sliders:", error);
-  //     }
-  //   };
+  const fetchSliders = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_BASE_URL}/api/sliders/get?active=true`
+      );
+      setSliders(response.data);
+    } catch (error) {
+      console.error("Error fetching sliders:", error);
+    }
+  };
 
-  //   useEffect(() => {
-  //     fetchSliders();
-  //   }, []);
+  useEffect(() => {
+    fetchSliders();
+  }, []);
 
   return (
     <div className="w-full ">
@@ -51,7 +48,7 @@ const MainBanner = () => {
         {sliders.map((slider, index) => (
           <div key={index} className="">
             <img
-              src={`${slider.sliderImage}`}
+              src={`${slider.sliderImage.secure_url}`}
               alt="slider"
               className="h-[580px] w-full object-cover aspect-square"
             />

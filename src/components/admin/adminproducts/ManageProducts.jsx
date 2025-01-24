@@ -12,6 +12,7 @@ import LoadingAnimation from "../LoadingAnimation";
 import { useLocation } from "react-router-dom";
 import AdminDashboardTemplate from "../../../templates/AdminDashboardTemplate";
 import LogoutButton from "../adminpanel/LogoutButton";
+import DashboardComponent from "../admindashboard/DashboardComponent";
 
 const ManageProducts = ({ showthissection }) => {
   const [showAddProduct, setShowAddProduct] = useState(false);
@@ -31,6 +32,8 @@ const ManageProducts = ({ showthissection }) => {
   const [noDataMessage, setNoDataMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const location = useLocation();
+
+
   const getCategories = async () => {
     try {
       const response = await axios.get(

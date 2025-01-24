@@ -71,7 +71,7 @@ const AdminLogin = () => {
       localStorage.setItem("name", name);
 
       console.log("Login successful");
-      navigate("/admin/sliders");
+      navigate("/admin/dashboard");
     } catch (error) {
       if (error.response && error.response.data) {
         const errorMessage = error.response.data.message;

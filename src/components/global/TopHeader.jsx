@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaFacebook, FaGoogle, FaYoutube } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
@@ -8,8 +8,21 @@ import { PiPhoneCallFill } from "react-icons/pi";
 import { Link } from "react-router-dom";
 
 const TopHeader = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 60);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className=" z-[60] w-full">
+    <div
+      className="z-[60] w-full"
+      style={scrolled ? { display: "none" } : { display: "block" }}
+    >
       <div className=" flex md:flex-row sm:flex-col justify-between sm:gap-2 md:gap-0 items-center bg-custom-blue  text-white">
         <div className="flex gap-4 w-full bg-custom-blue sm:rounded-br-0 md:rounded-br-[4rem] sm:h-[2rem] md:h-[2.5rem] sm:px-4 md:px-6 sm:text-xs lg:text-sm xlg:text-base">
           <Link
