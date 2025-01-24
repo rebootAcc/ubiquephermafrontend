@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [menuopen, setMenuopen] = useState(false);
   const togglemenuopen = () => setMenuopen(!menuopen);
 
   const location = useLocation();
-  const navigate = useNavigate();
 
   const NavElement = [
     { name: "Home", link: "/" },
@@ -41,7 +40,7 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-[white] fixed z-[1000] w-full font-lexend ${
+      className={`bg-[white] w-full ${
         scrolled ? "top-0 header-transition" : ""
       }`}
     >

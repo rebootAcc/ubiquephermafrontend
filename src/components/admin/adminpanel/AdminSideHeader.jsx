@@ -27,31 +27,31 @@ const AdminSideHeader = ({ isMobileSidebarOpen, closeMobileSidebar }) => {
         },
         {
           name: "Add & Manage Category",
-          link: "/admin/add&managecategory",
+          link: "/admin/category",
         },
         {
           name: "Add & Manage Molecule/Composition",
-          link: "/admin/add&managemolecule",
+          link: "/admin/molecule",
         },
         {
           name: "Add & Manage Strength",
-          link: "/admin/add&managestrrength",
+          link: "/admin/strength",
         },
         {
           name: "Add & Manage Packaging Size",
-          link: "/admin/add&managepackagingsize",
+          link: "/admin/packagingsize",
         },
       ],
     },
     {
       icon: <PiApproximateEqualsFill />,
       name: "Slider",
-      link: "/admin/add&manageslider",
+      link: "/admin/sliders",
     },
     {
       icon: <LuServer />,
       name: "Pop Up",
-      link: "/admin/add&managepopup",
+      link: "/admin/popup",
     },
   ];
 

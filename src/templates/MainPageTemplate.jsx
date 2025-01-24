@@ -11,8 +11,8 @@ const MainPageTemplate = ({ children }) => {
   const [marginTop, navRef] = useElementHeight();
   return (
     <div>
-      <div className="flex w-full h-full flex-col font-lexend  overflow-x-hidden ">
-        <div ref={navRef}>
+      <div className="flex w-full h-full flex-col overflow-x-hidden ">
+        <div ref={navRef} className="fixed z-[1000] w-full">
           <div>
             <TopHeader />
           </div>

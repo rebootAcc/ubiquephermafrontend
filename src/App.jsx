@@ -9,6 +9,12 @@ import Investor from "./pages/Investor";
 import AdminLogin from "./pages/AdminLogin";
 import AddAndManageSlider from "./pages/admin/AdminSlider";
 import AddAndManageProducts from "./pages/admin/AddAndManageProducts";
+import AddAndManagePopup from "./pages/admin/AddAndManagePopup";
+import AdminDashBoard from "./pages/admin/AdminDashBoard";
+import AddAndManageCategory from "./pages/admin/AddAndManageCategory";
+import AddAndManageMolecule from "./pages/admin/AddAndManageMolecule";
+import AddAndManageStrength from "./pages/admin/AddAndManageStrength";
+import AddAndManagePackagingSize from "./pages/admin/AddAndManagePackageingSize";
 
 function App() {
   return (
@@ -24,6 +30,15 @@ function App() {
         <Route path="/reboots" element={<AdminLogin />} />
         <Route path="/admin/sliders" element={<AddAndManageSlider />} />
         <Route path="/admin/products" element={<AddAndManageProducts />} />
+        <Route path="/admin/popup" element={<AddAndManagePopup />} />
+        <Route path="/admin/dashboard" element={<AdminDashBoard />} />
+        <Route path="/admin/category" element={<AddAndManageCategory />} />
+        <Route path="/admin/molecule" element={<AddAndManageMolecule />} />
+        <Route path="/admin/strength" element={<AddAndManageStrength />} />
+        <Route
+          path="/admin/packagingsize"
+          element={<AddAndManagePackagingSize />}
+        />
       </Routes>
     </>
   );
