@@ -205,7 +205,7 @@ const OurProducts = () => {
             <HomeLoadingAnimation />
           </div>
         ) : (
-          <div className="grid md:grid-cols-3 grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-3 grid-cols-1 lg:grid-cols-4 gap-4">
             {products.length > 0 ? (
               products.map((item, index) => (
                 <div className="" key={index}>

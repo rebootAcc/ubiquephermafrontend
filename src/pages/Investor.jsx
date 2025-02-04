@@ -14,7 +14,7 @@ const Investor = () => {
           className="w-full"
         />
         <div className="flex flex-col items-center lg:items-stretch gap-9">
-          <h1 className="text-custom-black text-lg md:text-2xl xlg:text-4xl font-semibold">
+          <h1 className="text-custom-black text-2xl xlg:text-4xl font-semibold">
             Investor Relations
           </h1>
           <p className="text-custom-black">

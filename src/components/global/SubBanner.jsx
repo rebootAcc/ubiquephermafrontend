@@ -26,7 +26,7 @@ const SubBanner = ({ heading }) => {
     <div className="relative bg-[#002a66d8]">
       {loadedImg ? (
         <img
-          className="w-full h-auto object-cover resize bg-cover opacity-80"
+          className="w-full h-36 lg:h-auto object-cover resize bg-cover opacity-80"
           src={loadedImg}
           alt="Background"
         />
