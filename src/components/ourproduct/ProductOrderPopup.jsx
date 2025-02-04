@@ -1,7 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 
 const ProductOrderPopup = ({ product, closePopup }) => {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [location, setLocation] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Construct the WhatsApp message
+    const whatsappMessage = `Customer Name: ${name}\nMobile: ${phone}\nLocation: ${location}\nMedicine Name: ${product.medicinename}\nQuantity: ${quantity}\nMessage: ${message}`;
+
+    // Encode the message
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    // Replace with your actual WhatsApp number, including country code, without "+" or "00"
+    const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+    const whatsappUrl = isDesktop
+      ? `https://web.whatsapp.com/send?phone=918617501527&text=${encodedMessage}`
+      : `https://api.whatsapp.com/send?phone=918617501527&text=${encodedMessage}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <div
       className={` flex gap-4  w-full opacity-100 z-[2000] h-fit  justify-center items-center `}
@@ -17,18 +40,22 @@ const ProductOrderPopup = ({ product, closePopup }) => {
               <p>Price: {product.medicinemrp}</p>
             </div>
           )}
-          <form className={`flex flex-col gap-4`}>
+          <form className={`flex flex-col gap-4`} onSubmit={handleSubmit}>
             <div className="flex flex-row gap-4">
               <div className="flex flex-col gap-2 w-[50%]">
                 <input
                   type="text"
                   placeholder="Customer Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   className="h-[3.5rem] px-2 rounded-md outline-none w-full bg-white/65"
                 />
               </div>
               <div className="flex flex-col gap-2 w-[50%]">
                 <input
                   type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                   placeholder="Mobile Number"
                   className="h-[3.5rem] px-2 rounded-md w-full bg-white/65"
                 />
@@ -38,6 +65,8 @@ const ProductOrderPopup = ({ product, closePopup }) => {
               <div className="flex flex-col gap-2 w-[50%]">
                 <input
                   type="number"
+                  value={quantity}
+                  onChange={(e) => setQuantity(e.target.value)}
                   placeholder="Quantity"
                   className="h-[3.5rem] px-2 rounded-md w-full bg-white/65"
                 />
@@ -46,6 +75,8 @@ const ProductOrderPopup = ({ product, closePopup }) => {
                 <input
                   type="text"
                   placeholder="Location"
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
                   className="h-[3.5rem] px-2 rounded-md w-full bg-white/65"
                 />
               </div>
@@ -54,6 +85,8 @@ const ProductOrderPopup = ({ product, closePopup }) => {
               <input
                 type="text"
                 placeholder="Message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 className="h-[6rem] px-2 rounded-md w-full bg-white/65"
               />
             </div>

@@ -50,7 +50,7 @@ const MainBanner = () => {
             <img
               src={`${slider.sliderImage.secure_url}`}
               alt="slider"
-              className="h-[580px] w-full object-cover aspect-square"
+              className="h-auto w-full object-cover -z-10"
             />
           </div>
         ))}

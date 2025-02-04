@@ -13,7 +13,6 @@ const Header = () => {
     { name: "Our Products", link: "/our-products" },
     { name: "Career", link: "/career" },
     { name: "Investor", link: "/investor" },
-    { name: "Marketing", link: "/marketing" },
     { name: "Contact Us", link: "/contact-us" },
   ];
 
@@ -63,12 +62,12 @@ const Header = () => {
               }`}
               to={navbar.link}
             >
-              <span className=" cursor-pointer">{navbar.name}</span>
+              <span className="cursor-pointer">{navbar.name}</span>
             </Link>
           ))}
         </div>
         <Link
-          to={"https://api.whatsapp.com/send?phone=919434072559"}
+          to={"https://api.whatsapp.com/send?phone=918617501527"}
           className="px-6 h-[2.4rem] flex justify-center items-center bg-custom-orange text-white text-base font-medium hover:bg-[white] hover:text-custom-orange border border-custom-orange rounded-md"
         >
           Trade Enquiry
@@ -106,7 +105,7 @@ const Header = () => {
             </Link>
           ))}
           <Link
-            to={"https://api.whatsapp.com/send?phone=919434072559"}
+            to={"https://api.whatsapp.com/send?phone=918617501527"}
             className="p-4 w-full my-8 flex justify-center items-center  text-lg font-medium bg-[white] text-custom-orange border border-custom-orange rounded-md"
           >
             Trade Enquiry
