@@ -5,6 +5,7 @@ import { BiSolidPhoneCall } from "react-icons/bi";
 import { MdEmail } from "react-icons/md";
 import EnquiryBoxComponent from "../components/contact/EnquiryBoxComponent";
 import SubBanner from "../components/global/SubBanner";
+import { Link } from "react-router-dom";
 
 const ContactUS = () => {
   return (
@@ -17,34 +18,43 @@ const ContactUS = () => {
               Contact Information
             </h1>
             <p className="xlg:text-lg sm:text-base text-custom-gray">
-              Lorem ipsum dolor sit amet consectetur. Cum risus elit aliquet
-              consequat. Ut risus est mattis mattis volutpat nunc non iaculis
-              nascetur. Quis tincidunt nullam faucibus in. Lacus eu venenatis
-              nam mauris at sed sagittis. Orci neque sapien placerat sit
-              vulputate tortor.
+              At our facilities, a skilled team ensures world-class quality
+              products using outstanding systems. We prioritize eco-friendly
+              processes like zero effluent discharge and water recycling. By FY
+              2026, we aim to source 50% of our energy from renewables like
+              solar. Get in touch to learn more!
             </p>
             <div className="flex flex-col gap-4 text-custom-black font-medium sm:text-base lg:text-sm xlg:text-base xxl:text-lg">
-              <div className="flex flex-row gap-2">
+              <Link
+                className="flex flex-row gap-2"
+                to="https://maps.app.goo.gl/2nSEUvfmbkFKSAuq5"
+                target="_blank"
+                referrerPolicy="no-referrer"
+              >
                 <FaLocationDot className="text-custom-blue mt-1" />
                 <span>
-                  Rajarhat, Newtown, Siliguri, West Bengal - 734001 India
+                  Solanipuram, Civil Line, Roorkee-247667 &#40;UK&#41; India RO:
+                  Papiva Para. Dabaram-II. Siliguri-734006. &#40;WB&#41; India
                 </span>
-              </div>
-              <div className="flex flex-row gap-2">
+              </Link>
+              <Link to="tel:+918617501527" className="flex flex-row gap-2">
                 <BiSolidPhoneCall className="text-custom-blue mt-1" />
-                <span>Phone: +91 12345 67890</span>
-              </div>
-              <div className="flex flex-row gap-2">
+                <span>Phone: +91 86175 01527</span>
+              </Link>
+              <Link
+                className="flex flex-row gap-2"
+                to="mailTo:info@ubiquepharma.in"
+              >
                 <MdEmail className="text-custom-blue mt-1" />
-                <span>E-mail: ubiquepharma@email.com</span>
-              </div>
+                <span>E-mail: info@ubiquepharma.in</span>
+              </Link>
             </div>
           </div>
           <div className="flex sm:gap-4 lg:gap-5 xlg:gap-8 flex-col md:flex-row">
             <img
-              src="/slider/slider-1.jpg"
+              src="/extra/contactus.jpg"
               alt="cover"
-              className="flex-1 rounded-lg w-full sm:h-[12rem] lg:h-[15rem] xl:h-[20rem]"
+              className="flex-1 rounded-lg w-full sm:h-[12rem] lg:h-[15rem] xl:h-[20rem] object-cover"
             />
             <div className="flex-1">
               <iframe

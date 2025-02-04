@@ -18,29 +18,16 @@ const FooterComponent = () => {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
 
-  const socialmedia = [
-    {
-      name: "/images/facebook.svg",
-      link: "",
-    },
-    { name: "/images/instagram.svg", link: "" },
-    {
-      name: "/images/linkedin.svg",
-      link: "",
-    },
-    { name: "/images/youtube.svg", link: "" },
-  ];
-
-  //   const getCategories = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         `${import.meta.env.VITE_BASE_URL}/api/categories/get`
-  //       );
-  //       setCategories(response.data);
-  //     } catch (error) {
-  //       console.error("Error fetching categories:", error);
-  //     }
-  //   };
+  const getCategories = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_BASE_URL}/api/categories/get`
+      );
+      setCategories(response.data);
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
+  };
 
   const handleCategoryClick = (categoryName) => {
     navigate(`/ourproducts?category=${encodeURIComponent(categoryName)}`);
@@ -58,9 +45,9 @@ const FooterComponent = () => {
     window.open(whatsappUrl, "_blank");
   };
 
-  //   useEffect(() => {
-  //     getCategories();
-  //   }, []);
+  useEffect(() => {
+    getCategories();
+  }, []);
 
   const quicklink = [
     { name: "Home", link: "/" },
@@ -83,23 +70,27 @@ const FooterComponent = () => {
             />
           </div>
           <div className="flex flex-col gap-4 sm:text-base lg:text-sm xlg:text-lg xl:text-lg text-white font-medium">
-            <p>
-              Lorem ipsum dolor sit amet consectetur. Id consectetur vitae at
-              semper mi facilisis et. Commodo in ultrices lectus magna viverra
-              sagittis risus
-            </p>
-            <div className="flex flex-row gap-2">
+            <Link to="tel:+918617501527" className="flex flex-row gap-2">
               <BiSolidPhoneCall className="mt-1" />
-              +91 12345 67890
-            </div>
-            <div className="flex flex-row gap-2">
+              +91 86175 01527
+            </Link>
+            <Link
+              to="mailTo:info@ubiquepharma.in"
+              className="flex flex-row gap-2"
+            >
               <MdEmail className="mt-1" />
-              ubiquepharma@email.com
-            </div>
-            <div className="flex flex-row gap-2">
+              info@ubiquepharma.in
+            </Link>
+            <Link
+              className="flex flex-row gap-2"
+              to="https://maps.app.goo.gl/2nSEUvfmbkFKSAuq5"
+              target="_blank"
+              referrerPolicy="no-referrer"
+            >
               <FaLocationDot className="mt-1" />
-              Rajarhat, Newtown, Siliguri, West Bengal - 734001 India
-            </div>
+              Solanipuram, Civil Line, Roorkee-247667 &#40;UK&#41; India RO:
+              Papiva Para. Dabaram-II. Siliguri-734006. &#40;WB&#41; India
+            </Link>
           </div>
         </div>
         <div className="flex sm:w-full lg:w-[20%] flex-col sm:gap-6 lg:gap-4 xl:gap-8 text-white">
@@ -146,10 +137,10 @@ const FooterComponent = () => {
           </div>
         </div>
         <div className="flex sm:w-full lg:w-[25%] flex-col gap-4">
-          <div>
+          <div className="flex-1">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14256.380009881912!2d88.4251498!3d26.7094118!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e441693048af99%3A0x1e6947765d6e2a15!2sJai%20Matadi%20Enterprise!5e0!3m2!1sen!2sin!4v1727548193942!5m2!1sen!2sin"
-              className="rounded-lg w-full sm:h-[10rem] lg:h-[8rem] xlg:h-[10rem]"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4264.478312296061!2d88.4621947!3d26.719279099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e4414bdc76ad85%3A0xbf8b5a683d7bdd7!2sUBIQUE%20PHARMA%20PVT.%20LTD.!5e1!3m2!1sen!2sin!4v1738668546006!5m2!1sen!2sin"
+              className="rounded-lg w-full sm:h-[10rem] lg:h-full"
               loading="lazy"
             ></iframe>
           </div>

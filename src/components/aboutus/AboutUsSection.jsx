@@ -24,7 +24,7 @@ const AboutUsSection = () => {
         style={{ height: isSmallScreen ? "auto" : `${rightSideHeight}px` }}
       >
         <img
-          src="/images/aboutus.png"
+          src="/slider/slider-1.jpg"
           alt=""
           className="w-full h-full object-cover rounded-md"
         />
@@ -37,32 +37,31 @@ const AboutUsSection = () => {
           About <span className="text-custom-green">Ubique</span>
         </h1>
         <p className="text-sm md:text-xs lg:text-xs xlg:text-sm xl:text-base xxl:text-lg text-custom-black">
-          Lorem ipsum dolor sit amet consectetur. Mauris egestas arcu nisl duis
-          at faucibus tortor sit ac. Tincidunt ullamcorper risus turpis lectus.
-          Nulla bibendum eu quis aliquam eget amet elementum eget porttitor. Et
-          pellentesque condimentum urna maecenas cursus vestibulum at
-          pellentesque dapibus. Tellus quis dui ipsum amet dignissim nulla amet
-          ipsum. Quis semper eget scelerisque eget sodales ullamcorper eget in.
-          Fames tortor hac risus fringilla quam lectus ac nisl. <br /> enenatis
-          consectetur interdum sagittis a sed volutpat sit tempus. Nibh elit in
-          diam risus habitasse diam aliquam duis cursus. Urna varius venenatis
-          nec viverra phasellus fermentum nisl. Auctor pellentesque porta
-          tristique nunc magna a semper. Diam commodo elementum eu neque turpis
-          sapien. Elit nisi neque ultricies et gravida eget fermentum fringilla.
-          Commodo pharetra neque pellentesque vitae scelerisque. Vitae at montes
-          dui tincidunt. Nibh hendrerit libero sodales et nulla. Turpis purus
-          scelerisque diam et ac neque velit. In bibendum maecenas pellentesque
-          massa vel libero commodo nec. Eu potenti vulputate etiam enim amet
-          egestas ante tincidunt sem. Pharetra convallis sit venenatis sed
-          aliquam netus risus eget. Lacus velit eget consectetur faucibus eu
-          lectus id in. Facilisi phasellus cursus aliquet adipiscing interdum.
-          <br /> Quis lacus ridiculus nulla facilisi molestie eget. Est
-          phasellus erat eleifend arcu gravida tincidunt eget orci. Convallis
-          feugiat amet elit fermentum. In fames odio massa tempus sed nulla
-          sagittis sagittis imperdiet. At aliquam fermentum ornare eu tellus
-          aliquam tortor sed lectus. Tellus mattis dignissim et augue felis. In
-          curabitur laoreet urna ultricies. Erat pharetra placerat odio nisl
-          arcu elit lacus aenean in. Odio euismod
+          Ubique embarked on its mission with a core commitment to enhancing
+          health and well-being. Since our inception, we have dedicated
+          ourselves to delivering high-quality, affordable medications across a
+          comprehensive range of drug dosage schedules. <br /> <br />
+          Founded in 2014, Ubique has always been driven by the vision of
+          fostering a healthier society. We initially focused on Calcium,
+          Vitamins, and various specialty areas, and over time, we have
+          broadened our scope into new fields. Looking ahead, we plan to launch
+          the Ubique Human Welfare Foundation, further strengthening our
+          Corporate Social Responsibility &#40;CSR&#41; efforts and supporting
+          both privileged and underserved communities. <br /> <br />
+          At Ubique, we take immense pride in our dedication to exceptional
+          customer care, our employees&apos; professional growth, and an
+          unwavering commitment to quality. We understand that well-being goes
+          beyond medicine—it is about ensuring that healthcare remains
+          accessible, reliable, and effective for all. <br /> <br />
+          Innovation and integrity remain at the heart of our operations. By
+          continuously improving our formulations, expanding research, and
+          upholding stringent quality control measures, we ensure that every
+          product meets the highest industry standards. Our commitment extends
+          beyond business, as we actively seek opportunities to contribute
+          positively to the communities we serve. As we look to the future,
+          Ubique remains steadfast in its mission—to enhance lives through
+          groundbreaking healthcare solutions, social responsibility, and an
+          enduring promise to create a healthier tomorrow for all.
         </p>
       </div>
     </div>
