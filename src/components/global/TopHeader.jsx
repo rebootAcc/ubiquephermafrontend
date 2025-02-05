@@ -44,14 +44,14 @@ const TopHeader = () => {
             <span>+91 86175 01527</span>
           </Link>
           <Link
-            to="mailto:ubiquepharma@email.com"
+            to="mailto:ubiquepharma@gmail.com"
             className="flex md:gap-2 sm:gap-1 items-center font-semibold md:flex sm:hidden"
           >
             <span>
               <MdOutgoingMail />
             </span>
-            <Link className="" to={"mailto:ubiquepharma@email.com"}>
-              ubiquepharma@email.com
+            <Link className="" to={"mailto:ubiquepharma@gmail.com"}>
+              ubiquepharma@gmail.com
             </Link>
           </Link>
           <span className="flex md:gap-2 sm:gap-1 items-center font-semibold md:flex sm:hidden">

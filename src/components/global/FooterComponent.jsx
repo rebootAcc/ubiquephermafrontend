@@ -66,10 +66,10 @@ const FooterComponent = () => {
             <img
               src="/logo-footer.png"
               alt=""
-              className="xl:h-[3rem] sm:h-[2.5rem] lg:h-[2rem]"
+              className="xl:h-[5rem] sm:h-[4.5rem] lg:h-[4rem]"
             />
           </div>
-          <div className="flex flex-col gap-4 sm:text-base lg:text-sm xlg:text-lg xl:text-lg text-white font-medium">
+          <div className="flex flex-col gap-4 text-lg lg:text-base xlg:text-lg xl:text-xl text-white font-medium">
             <Link to="tel:+918617501527" className="flex flex-row gap-2">
               <BiSolidPhoneCall className="mt-1" />
               +91 86175 01527
@@ -100,7 +100,7 @@ const FooterComponent = () => {
             </span>
           </div>
 
-          <div className="flex flex-col sm:gap-4 xl:gap-4 sm:text-sm md:text-base xlg:text-base">
+          <div className="flex flex-col sm:gap-4 xl:gap-4 text-base md:text-base xlg:text-lg">
             {quicklink.map((service, index) => (
               <Link
                 to={service.link}
@@ -122,7 +122,7 @@ const FooterComponent = () => {
             </span>
           </div>
 
-          <div className="flex flex-col sm:gap-4 xl:gap-4 sm:text-sm md:text-base  xlg:text-base">
+          <div className="flex flex-col sm:gap-4 xl:gap-4 text-base md:text-base xlg:text-lg">
             {categories.slice(0, 6).map((category, index) => (
               <button
                 className="flex flex-row gap-2 font-medium items-center"
@@ -158,7 +158,7 @@ const FooterComponent = () => {
           <span>
             Copyright 2024
             <Link to={"/"} className="font-bold ml-2 mr-2">
-              Jai Matadi Enterprise
+              Ubique Pharma
             </Link>
             | All Rights Reserved. Privacy Policy
           </span>

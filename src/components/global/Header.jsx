@@ -48,7 +48,7 @@ const Header = () => {
           <img
             src="/logo.png"
             alt="Ubique Pherma PVT. LTD. Logo"
-            className="xl:h-[5.5rem] xlg:h-[5rem] lg:h-[4rem] w-full"
+            className="xl:h-[4.5rem] xxl:h-[5rem] xlg:h-[4rem] lg:h-[3.5rem] w-full"
           />
         </Link>
         <div className="flex justify-end items-center lg:text-sm xlg:text-base xl:text-lg relative">
@@ -78,7 +78,7 @@ const Header = () => {
           <img
             src="/logo.png"
             alt="Ubique Pherma PVT. LTD. Logo"
-            className="sm:h-[1.5rem] md:h-[1.8rem]"
+            className="sm:h-[2.5rem] md:h-[2.5rem]"
           />
         </Link>
 

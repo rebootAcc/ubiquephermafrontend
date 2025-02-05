@@ -11,7 +11,7 @@ const ProductCard = ({ content, onOrderNowClick }) => {
     details,
   } = content;
   return (
-    <div className="p-2 shadow-custom flex flex-col gap-2 h-full rounded-md border border-[#0000001A]">
+    <div className="p-2 py-3 shadow-custom flex flex-col gap-2 h-full rounded-md border border-[#0000001A]">
       <div>
         <img
           src={imgsrc}
@@ -23,13 +23,13 @@ const ProductCard = ({ content, onOrderNowClick }) => {
         <h1 className="text-xl font-medium">{medicinename}</h1>
         <div className="flex flex-row justify-between font-medium ">
           <div className="text-custom-lite-gray ">
-            MRP <span className="text-custom-black">{medicinemrp}</span>
+            MRP <span className="text-custom-black">₹{medicinemrp}</span>
           </div>
           <div className="text-custom-lite-gray ">
-            PTS <span className="text-custom-black">{medicinepts}</span>
+            PTS <span className="text-custom-black">₹{medicinepts}</span>
           </div>
           <div className="text-custom-lite-gray ">
-            PTR <span className="text-custom-black">{medicineptr}</span>
+            PTR <span className="text-custom-black">₹{medicineptr}</span>
           </div>
         </div>
         <div className="text-custom-lite-gray ">
@@ -45,15 +45,12 @@ const ProductCard = ({ content, onOrderNowClick }) => {
           </p>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-4 font-medium ">
+      <div className="grid grid-cols-1 gap-4 font-medium ">
         <button
           onClick={() => onOrderNowClick(content)}
-          className="h-[2rem] flex justify-center items-center rounded-sm text-sm text-custom-green bg-[#F7F7F7]"
+          className="h-[2.5rem] flex justify-center items-center rounded-md text-base bg-custom-blue text-[#F7F7F7]"
         >
           Order Now
-        </button>
-        <button className="h-[2rem] flex justify-center items-center rounded-sm text-sm text-custom-orange bg-[#F7F7F7]">
-          Enquiry Now
         </button>
       </div>
     </div>

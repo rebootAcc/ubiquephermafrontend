@@ -9,8 +9,8 @@ const Investor = () => {
       <SubBanner heading={"Investor"} />
       <div className="xl:p-16 lg:p-8 sm:p-4 sm:grid grid-cols-1 place-items-stretch md:flex flex-col items-stretch gap-6">
         <img
-          src="/extra/career-investor-cover.png"
-          alt="career-cover"
+          src="/images/investor.jpg"
+          alt="investor-cover"
           className="w-full"
         />
         <div className="flex flex-col items-center lg:items-stretch gap-9">

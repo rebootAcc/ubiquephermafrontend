@@ -45,11 +45,11 @@ const EnquiryBoxComponent = ({ showCover = true }) => {
         />
       </div>
       <div
-        className="bg-[url('/custom-bg/enquiry-form.png')] w-full bg-blend-multiply flex-1 relative flex"
+        className="bg-[url('/custom-bg/enquiry-form.png')] w-full bg-blend-multiply flex-1 relative flex rounded-md"
         ref={formRef}
       >
         <form
-          className={`flex flex-col sm:gap-8 lg:gap-4 xlg:gap-8 xl:gap-12 sm:px-4 lg:px-8 xlg:px-12 sm:py-4 lg:py-8 xlg:py-12 w-full relative bg-[rgba(52,_141,_203,_0.70)]`}
+          className={`flex flex-col sm:gap-8 lg:gap-4 xlg:gap-8 xl:gap-12 sm:px-4 lg:px-8 xlg:px-12 sm:py-4 lg:py-8 xlg:py-12 w-full relative rounded-md bg-[rgba(52,_141,_203,_0.70)]`}
           onSubmit={handleSubmit}
         >
           <div className="flex flex-col gap-2">

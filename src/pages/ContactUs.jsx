@@ -13,18 +13,18 @@ const ContactUS = () => {
       <SubBanner heading={"Contact Us"} />
       <div className="xl:p-16 lg:p-8 sm:p-4 sm:grid sm:grid-cols-1 place-items-stretch md:flex md:flex-row items-stretch gap-6">
         <div className="flex flex-col sm:gap-3 flex-1 lg:gap-3 xlg:gap-5">
-          <div className="flex flex-col border sm:gap-3 lg:gap-3 xlg:gap-5 sm:px-4 lg:px-8 xlg:px-12 sm:py-4 lg:py-8 xlg:py-12 rounded-md border-custom-blue">
-            <h1 className="xlg:text-4xl lg:text-2xl sm:text-2xl font-semibold text-custom-black">
+          <div className="flex flex-col border sm:gap-3 lg:gap-3 xlg:gap-4 xxl:gap-5 sm:px-4 lg:px-6 xlg:px-8 xxl:px-12 sm:py-4 lg:py-6 xxl:py-12 xlg:py-8 rounded-md border-custom-blue">
+            <h1 className="xxl:text-4xl xlg:text-2xl lg:text-2xl sm:text-2xl font-semibold text-custom-black">
               Contact Information
             </h1>
-            <p className="xlg:text-lg sm:text-base text-custom-gray">
+            <p className="xxl:text-lg xlg:text-base text-base text-custom-gray">
               At our facilities, a skilled team ensures world-class quality
               products using outstanding systems. We prioritize eco-friendly
               processes like zero effluent discharge and water recycling. By FY
               2026, we aim to source 50% of our energy from renewables like
               solar. Get in touch to learn more!
             </p>
-            <div className="flex flex-col gap-4 text-custom-black font-medium sm:text-base lg:text-sm xlg:text-base xxl:text-lg">
+            <div className="flex flex-col gap-4 text-custom-black font-medium sm:text-base lg:text-sm xlg:text-sm xxl:text-lg">
               <Link
                 className="flex flex-row gap-2"
                 to="https://maps.app.goo.gl/2nSEUvfmbkFKSAuq5"

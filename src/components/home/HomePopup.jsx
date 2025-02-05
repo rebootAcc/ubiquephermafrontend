@@ -3,7 +3,7 @@ import { FaRegWindowClose } from "react-icons/fa";
 
 const HomePopup = ({ handleClosePopup, popupData }) => {
   return (
-    <div className="fixed top-0 z-[100] left-0 w-full bg-black bg-opacity-25 h-full flex items-center justify-center overflow-y-scroll">
+    <div className="fixed top-0 z-[1000] left-0 w-full bg-black bg-opacity-25 h-full flex items-center justify-center overflow-y-scroll">
       <div className="w-full sm:h-[50vh] lg:h-[100vh] justify-center items-center flex flex-col rounded-lg">
         <div className="sm:w-[85%] md:w-[60%] lg:w-[40%] xl:w-[35%] relative rounded-lg bg-white">
           <div className="w-full h-[4rem] border-b border-[#A8579C]">

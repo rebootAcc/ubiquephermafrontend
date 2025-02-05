@@ -19,13 +19,13 @@ const ProductCategory = () => {
         setAutoplay(false);
       } else if (window.innerWidth <= 1280) {
         setSlidesToShow(3);
-        setAutoplay(false);
+        setAutoplay(true);
       } else if (window.innerWidth <= 1780) {
         setSlidesToShow(3);
-        setAutoplay(false);
+        setAutoplay(true);
       } else {
         setSlidesToShow(3);
-        setAutoplay(false);
+        setAutoplay(true);
       }
     };
 
@@ -69,7 +69,7 @@ const ProductCategory = () => {
     speed: 2000,
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
-    autoplay: autoplay,
+    autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: false,
 
@@ -94,7 +94,7 @@ const ProductCategory = () => {
                   alt=""
                   className=" xlg:w-[16rem] xlg:h-[16rem] md:h-[12rem] md:w-[12rem] h-[10rem] w-[10rem] rounded-full object-cover"
                 />
-                <h1 className="xlg:text-3xl lg:text-2xl text-xl font-semibold text-custom-gray">
+                <h1 className="xlg:text-3xl lg:text-2xl text-xl font-semibold text-custom-blue">
                   {item.brandName}
                 </h1>
               </div>

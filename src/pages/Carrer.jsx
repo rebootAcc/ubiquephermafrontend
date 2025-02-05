@@ -8,11 +8,7 @@ const Carrer = () => {
     <MainPageTemplate>
       <SubBanner heading={"Career"} />
       <div className="xl:p-16 lg:p-8 sm:p-4 sm:grid grid-cols-1 place-items-stretch md:flex flex-col items-stretch gap-6">
-        <img
-          src="/extra/career-investor-cover.png"
-          alt="career-cover"
-          className="w-full"
-        />
+        <img src="/images/career.webp" alt="career-cover" className="w-full" />
         <p className="text-custom-black">
           Join Ubique Pharma, a leading pharmaceutical manufacturer committed to
           innovation, quality, and global health. Since 2014, we have been
