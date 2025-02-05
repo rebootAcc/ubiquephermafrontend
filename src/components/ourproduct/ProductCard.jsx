@@ -22,30 +22,42 @@ const ProductCard = ({ content, onOrderNowClick }) => {
       <div className="flex flex-col gap-1">
         <h1 className="text-xl font-medium text-center">{medicinename}</h1>
         <div className="flex flex-row justify-between font-medium ">
-          <div className="text-custom-lite-gray ">
+          <div className="text-custom-black ">
             {medicinemrp && medicinemrp !== "" ? (
               <>
-                MRP <span className="text-custom-black">₹{medicinemrp}</span>
+                MRP{" "}
+                <span className="text-custom-lite-gray font-normal">
+                  ₹{medicinemrp}
+                </span>
               </>
             ) : null}
           </div>
-          <div className="text-custom-lite-gray ">
+          <div className="text-custom-black ">
             {medicinepts && medicinepts !== "" ? (
               <>
-                PTS <span className="text-custom-black">₹{medicinepts}</span>
+                PTS{" "}
+                <span className=" text-custom-lite-gray font-normal">
+                  ₹{medicinepts}
+                </span>
               </>
             ) : null}
           </div>
-          <div className="text-custom-lite-gray ">
+          <div className="text-custom-black ">
             {medicineptr && medicineptr !== "" ? (
               <>
-                PTR <span className="text-custom-black">₹{medicineptr}</span>
+                PTR{" "}
+                <span className=" text-custom-lite-gray font-normal">
+                  ₹{medicineptr}
+                </span>
               </>
             ) : null}
           </div>
         </div>
-        <div className="text-custom-lite-gray ">
-          Pack Size <span className="text-custom-black">{packagingsize}</span>
+        <div className="text-custom-black font-medium ">
+          Pack Size{" "}
+          <span className="text-custom-lite-gray font-normal">
+            {packagingsize}
+          </span>
         </div>
         <div className="line-clamp-3">
           <p className="text-sm text-custom-black font-medium">
