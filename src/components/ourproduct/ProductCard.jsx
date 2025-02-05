@@ -23,13 +23,25 @@ const ProductCard = ({ content, onOrderNowClick }) => {
         <h1 className="text-xl font-medium text-center">{medicinename}</h1>
         <div className="flex flex-row justify-between font-medium ">
           <div className="text-custom-lite-gray ">
-            MRP <span className="text-custom-black">₹{medicinemrp}</span>
+            {medicinemrp && medicinemrp !== "" ? (
+              <>
+                MRP <span className="text-custom-black">₹{medicinemrp}</span>
+              </>
+            ) : null}
           </div>
           <div className="text-custom-lite-gray ">
-            PTS <span className="text-custom-black">₹{medicinepts}</span>
+            {medicinepts && medicinepts !== "" ? (
+              <>
+                PTS <span className="text-custom-black">₹{medicinepts}</span>
+              </>
+            ) : null}
           </div>
           <div className="text-custom-lite-gray ">
-            PTR <span className="text-custom-black">₹{medicineptr}</span>
+            {medicineptr && medicineptr !== "" ? (
+              <>
+                PTR <span className="text-custom-black">₹{medicineptr}</span>
+              </>
+            ) : null}
           </div>
         </div>
         <div className="text-custom-lite-gray ">
@@ -45,10 +57,10 @@ const ProductCard = ({ content, onOrderNowClick }) => {
           </p>
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-4 font-medium ">
+      <div className="h-full flex justify-end items-end w-full gap-4 font-medium ">
         <button
           onClick={() => onOrderNowClick(content)}
-          className="h-[2.5rem] flex justify-center items-center rounded-md text-base bg-custom-blue text-[#F7F7F7]"
+          className="h-[2.5rem] w-full flex justify-center items-center rounded-md text-base bg-custom-blue text-[#F7F7F7]"
         >
           Order Now
         </button>
