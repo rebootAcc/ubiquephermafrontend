@@ -20,7 +20,7 @@ const ProductCard = ({ content, onOrderNowClick }) => {
         />
       </div>
       <div className="flex flex-col gap-1">
-        <h1 className="text-xl font-medium">{medicinename}</h1>
+        <h1 className="text-xl font-medium text-center">{medicinename}</h1>
         <div className="flex flex-row justify-between font-medium ">
           <div className="text-custom-lite-gray ">
             MRP <span className="text-custom-black">₹{medicinemrp}</span>
